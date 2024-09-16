@@ -5,8 +5,8 @@ import InfoOverlay from "~/components/InfoOverlay";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Général Services & Logistique | GSL" },
+    { name: "description", content: "GSL est une entreprise de transport nationale connue qui propose des voitures et des camions de qualité, un personnel qualifié de qualité, le meilleur processus de livraison et les solutions les plus compétitives en Mauritanie. Nous sommes fiers d'agir en tant que partenaires commerciaux de nos clients et d'offrir des solutions intégrées aux entreprises de tous les secteurs. Nous avons des références commerciales qui attestent de notre qualité unique, de notre compétitivité et de notre concentration sur la sûreté et la sécurité." },
   ];
 };
 
