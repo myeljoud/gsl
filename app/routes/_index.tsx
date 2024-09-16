@@ -16,7 +16,7 @@ export default function Index() {
       <Header />
       <section id="home" className="mx-auto w-full max-w-screen-laptop tablet:px-4 py-16 relative">
         <img src="/icons/Vector.svg" alt="" className="hidden tablet:block absolute top-5 left-20  z-10" />
-        <img src="/icons/vector-mobile.svg" className="min-w-96 absolute top-40 left-56  tablet:hidden" alt="" />
+        <img src="/icons/vector-mobile.svg" className="w-96 absolute top-40 left-40  tablet:hidden" alt="" />
 
         <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4 relative z-20">
           <div className="order-2 tablet:order-1 flex flex-col items-start gap-4 py-2 px-4 ">
@@ -31,25 +31,7 @@ export default function Index() {
           <img src="/images/photo-2.png" alt="Vehicles" className="order-4 w-full h-[212px] tablet:h-[327px] rounded-lg pr-4 tablet:pr-0" />
         </div>
       </section>
-      {/* <section className="container py-10">
-        <div className="flex flex-col gap-4">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="flex flex-col items-start gap-4 py-2 px-4">
-              <h1 className="font-robotoCondensed text-6xl font-bold ">Solutions logistiques rapides et fiables</h1>
-              <p className="text-[#898989]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <button className="text-white bg-primary px-5 py-4">
-                Contactez-nous
-              </button>
-            </div>
-            <img src="/images/photo-3.png" alt="Vehicle" className="size-full rounded-lg" />
 
-          </div>
-          <div className="grid grid-cols-2 justify-between gap-4 h-full">
-            <img src="/images/photo-1.png" alt="Vehicles" className="w-full h-[327px] rounded-lg" />
-            <img src="/images/photo-2.png" alt="Vehicles" className="w-full h-[327px] rounded-lg" />
-          </div>
-        </div>
-      </section> */}
       <section id="services" className="container flex flex-col gap-8 py-16 px-8">
         <div className="mx-auto flex flex-col gap-1">
           <h1 className="font-sans font-semibold text-center text-primary text-32">Nos partenaires</h1>
@@ -111,13 +93,16 @@ export default function Index() {
               </button>
             </div>
           </div>
-          <div className="flex flex-col gap-4">
-            <p className="w-full tablet:w-[620px] font-normal text-2xl tablet:text-4xl font-roboto">Donec ac neque porttitor, bibendum velit efficitur, laoreet elit. Mauris arcu nunc, posuere ac porta sit amet, fermentum et diam. Duis eu dapibus dui. Suspendisse pretium consectetur elit vel pretium.</p>
-            <div className="flex items-center gap-4">
-              <img src="images/profil.png" alt="" className="w-12 h-12 tablet:w-auto tablet:h-auto" />
-              <div>
-                <h2 className="text-lg tablet:text-xl font-bold">Cameron Williamson</h2>
-                <p className="text-sm tablet:text-base">Marketing Coordinator at Big Kahuna Burger Ltd.</p>
+          <div className="relative">
+            <img src="/icons/quote.svg" alt="" className="absolute -top-8 -right-4 tablet:-top-8 tablet:-left-20" />
+            <div className="flex flex-col gap-4">
+              <p className="w-full tablet:w-[620px] font-normal text-2xl tablet:text-4xl font-roboto">Donec ac neque porttitor, bibendum velit efficitur, laoreet elit. Mauris arcu nunc, posuere ac porta sit amet, fermentum et diam. Duis eu dapibus dui. Suspendisse pretium consectetur elit vel pretium.</p>
+              <div className="flex items-center gap-4">
+                <img src="images/profil.png" alt="" className="w-12 h-12 tablet:w-auto tablet:h-auto" />
+                <div>
+                  <h2 className="text-lg tablet:text-xl font-bold">Cameron Williamson</h2>
+                  <p className="text-sm tablet:text-base">Marketing Coordinator at Big Kahuna Burger Ltd.</p>
+                </div>
               </div>
             </div>
           </div>
