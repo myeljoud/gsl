@@ -14,8 +14,9 @@ export function Header() {
           <img
             src="/icons/logo-gsl.svg"
             alt="Maurisanté logo"
-            className="w-44"
+            className="hidden tablet:block"
           />
+          <img src="/icons/logo-mobile.svg" className='tablet:hidden' alt="" />
         </a>
         <nav className="hidden tablet:flex items-center space-x-6">
           <a href="#home" className="py-4 hover:border-b-3 hover:border-primary">Accueil</a>

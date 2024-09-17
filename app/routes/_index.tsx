@@ -14,9 +14,9 @@ export default function Index() {
   return (
     <main className="">
       <Header />
-      <section id="home" className="mx-auto w-full max-w-screen-laptop tablet:px-4 py-16 relative">
+      <section id="home" className="mx-auto w-full max-w-screen-laptop tablet:px-4 py-8 tablet:py-16  relative">
         <img src="/icons/Vector.svg" alt="" className="hidden tablet:block absolute top-5 left-20  z-10" />
-        <img src="/icons/vector-mobile.svg" className="w-96 absolute top-40 left-40  tablet:hidden" alt="" />
+        {/* <img src="/icons/vector-mobile.svg" className="w-96 absolute top-40 left-40  tablet:hidden" alt="" /> */}
 
         <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4 relative z-20">
           <div className="order-2 tablet:order-1 flex flex-col items-start gap-4 py-2 px-4 ">
@@ -26,9 +26,9 @@ export default function Index() {
               Contactez-nous
             </button>
           </div>
-          <img src="/images/photo-3.png" alt="Vehicle" className="order-1 tablet:order-2 rounded-lg pl-4 tablet:pl-0" />
+          <img src="/images/photo-3.png" alt="Vehicle" className="order-1 tablet:order-2 rounded-r-0 tablet:rounded-lg pl-4 tablet:pl-0" />
           <img src="/images/photo-1.png" alt="Vehicles" className="hidden tablet:block tablet:w-full tablet:h-[327px] tablet:rounded-lg tablet:order-3" />
-          <img src="/images/photo-2.png" alt="Vehicles" className="order-4 w-full h-[212px] tablet:h-[327px] rounded-lg pr-4 tablet:pr-0" />
+          <img src="/images/photo-2.png" alt="Vehicles" className="rounded-l-none order-4 w-full h-[212px] tablet:h-[327px] tablet:rounded-lg pr-4 tablet:pr-0" />
         </div>
       </section>
 
@@ -61,7 +61,7 @@ export default function Index() {
           <div className="flex flex-col items-center tablet:items-start gap-4 tablet:order-1">
             <h1 className="font-robotoCondensed text-5xl font-bold text-center tablet:text-left">Etiam at velit vel magna viverra feugiat</h1>
             <p className="font-roboto text-center tablet:text-left">En parallèle, notre expertise logistique nous permet de proposer des services de transport des engins et des marchandises flexibles et adaptés aux exigences de nos clients, qu'il s'agisse de petites entreprises ou de grandes industries. Grâce à notre réseau étendu et à une équipe de professionnels dédiés, nous assurons une gestion fluide et efficace des opérations de transport.</p>
-            <a href="#contact" className="hidden tablet:block py-4 px-5 border border-black font-semibold">
+            <a href="#contact" className=" py-4 px-5 border border-black font-semibold">
               Contactez-nous
             </a>
           </div>
@@ -69,9 +69,9 @@ export default function Index() {
         <div className="grid grid-cols-1 tablet:grid-cols-2 gap-8 items-center">
           <img src="images/PHOTO-3.png" alt="" className="w-full" />
           <div className="flex flex-col items-center tablet:items-start gap-4">
-            <h1 className="font-robotoCondensed text-5xl font-bold text-center tablet:text-left">Etiam at velit vel magna viverra feugiat</h1>
+            <h1 className="font-robotoCondensed text-5xl tablet:text-5xl font-bold text-center tablet:text-left">Etiam at velit vel magna viverra feugiat</h1>
             <p className="font-roboto text-center tablet:text-left">En parallèle, notre expertise logistique nous permet de proposer des services de transport des engins et des marchandises flexibles et adaptés aux exigences de nos clients, qu'il s'agisse de petites entreprises ou de grandes industries. Grâce à notre réseau étendu et à une équipe de professionnels dédiés, nous assurons une gestion fluide et efficace des opérations de transport.</p>
-            <a href="#contact" className="hidden tablet:block py-4 px-5 border border-black font-semibold">
+            <a href="#contact" className="py-4 px-5 border border-black font-semibold">
               Contactez-nous
             </a>
           </div>

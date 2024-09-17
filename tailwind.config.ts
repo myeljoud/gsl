@@ -10,7 +10,8 @@ export default {
     },
     extend: {
       fontSize:{
-        "32":"32px"
+        "32":"32px",
+        "38":"38px"
       },
       borderWidth:{
         "3":"3px"
