@@ -7,7 +7,7 @@ import { CarouselPlugin } from "~/components/Carousel";
 export const meta: MetaFunction = () => {
   return [
     { title: "Général Services & Logistique | GSL" },
-    { name: "description", content: "General Services And logistics (GSL) propose aux opérateurs économiques des offres de solutions logistiques dans tous les secteurs d’activités qui régissent la vie économique dans ce pays. Depuis 20 ans, à travers nos solutions logistiques multimodales (Transport Matérielles, Location des voitures des projets et VIP, location et de Camion et citerne)." },
+    { name: "description", content: "GSL est une entreprise de transport nationale connue qui propose des voitures et des camions de qualité, un personnel qualifié de qualité, le meilleur processus de livraison et les solutions les plus compétitives en Mauritanie. Nous sommes fiers d'agir en tant que partenaires commerciaux de nos clients et d'offrir des solutions intégrées aux entreprises de tous les secteurs. Nous avons des références commerciales qui attestent de notre qualité unique, de notre compétitivité et de notre concentration sur la sûreté et la sécurité." },
   ];
 };
 
