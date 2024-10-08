@@ -6,10 +6,8 @@ import { useState } from "react";
 import { CarouselPlugin } from "~/components/Carousel";
 export const meta: MetaFunction = () => {
   return [
-    { title: "GSL" },
-    {
-      name: "description", content: "General Services And logistics (GSL) propose aux opérateurs économiques des offres de solutions logistiques dans tous les secteurs d’activités qui régissent la vie économique dans ce pays. Depuis 20 ans, à travers nos solutions logistiques multimodales (Transport Matérielles, Location des voitures des projets et VIP, location et de Camion et citerne)."
-    },
+    { title: "Général Services & Logistique | GSL" },
+    { name: "description", content: "General Services And logistics (GSL) propose aux opérateurs économiques des offres de solutions logistiques dans tous les secteurs d’activités qui régissent la vie économique dans ce pays. Depuis 20 ans, à travers nos solutions logistiques multimodales (Transport Matérielles, Location des voitures des projets et VIP, location et de Camion et citerne)." },
   ];
 };
 
