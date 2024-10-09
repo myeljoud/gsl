@@ -9,11 +9,11 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 
 // Sample image data - replace with your actual images
 const images = [
-  { src: "/images/pain-naruto-indigo-1920x1200-10830.png", alt: "Image 1" },
-  { src: "/images/1301565.png", alt: "Image 2" },
-  { src: "/images/wallpaperflare.com.jpg", alt: "Image 3" },
-  { src: "/images/wallpaperflare.com.jpg", alt: "Image 4" },
-  { src: "/images/satoru-gojo-jujutsu-1920x1080-10828.png", alt: "Image 5" },
+  { src: "/images/PHOTO-2.png", alt: "Image 1" },
+  { src: "/images/PHOTO-3.png", alt: "Image 2" },
+  { src: "/images/PHOTO-2.png", alt: "Image 3" },
+  { src: "/images/PHOTO-2.png", alt: "Image 4" },
+  { src: "/images/PHOTO.png", alt: "Image 5" },
 
 ]
 
