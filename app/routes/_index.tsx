@@ -122,7 +122,7 @@ export default function Index() {
       <section id="temoignage" className="bg-[#F7F5F5] pt-12 px-4 
        tablet:pt-8 tablet:px-8 tablet:pb-32">
         <h1 className="font-sans font-semibold text-center text-primary text-32 mb-8">Nos partenaires</h1>
-        <div className="container">
+        <div className="tablet:container">
 
           <CarouselPlugin />
         </div>

@@ -9,11 +9,12 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 
 // Sample image data - replace with your actual images
 const images = [
-  { src: "/images/photo-2.png", alt: "Image 1" },
-  { src: "/images/photo-3.png", alt: "Image 2" },
-  { src: "/images/photo-1.png", alt: "Image 3" },
-  { src: "/images/photo-3.png", alt: "Image 4" },
-  { src: "/images/photo-3.png", alt: "Image 5" },
+  { src: "/images/pain-naruto-indigo-1920x1200-10830.png", alt: "Image 1" },
+  { src: "/images/1301565.png", alt: "Image 2" },
+  { src: "/images/wallpaperflare.com.jpg", alt: "Image 3" },
+  { src: "/images/wallpaperflare.com.jpg", alt: "Image 4" },
+  { src: "/images/satoru-gojo-jujutsu-1920x1080-10828.png", alt: "Image 5" },
+
 ]
 
 export default function CarouselPlugin() {
@@ -35,14 +36,14 @@ export default function CarouselPlugin() {
 
   return (
     <>
-      <Card className="w-full aspect-video mx-auto">
+      <Card className="w-full aspect-video tablet:aspect-[4/3] mx-auto">
         <CardContent className="p-0">
           <div className="relative">
             <Carousel className="w-full">
               <CarouselContent>
                 {images.map((image, index) => (
                   <CarouselItem key={index} className={index === currentIndex ? '' : 'hidden'}>
-                    <div className="relative aspect-video">
+                    <div className="relative aspect-video tablet:aspect-[4/3]">
                       <img
                         src={image.src}
                         alt={image.alt}
