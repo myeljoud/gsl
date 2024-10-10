@@ -3,7 +3,7 @@ import { Header } from "~/components/Header";
 import Footer from "~/components/Footer";
 import InfoOverlay from "~/components/InfoOverlay";
 import { useState } from "react";
-import { CarouselPlugin } from "~/components/Carousel";
+import CarouselPlugin from "~/components/Carousel";
 export const meta: MetaFunction = () => {
   return [
     { title: "Général Services & Logistique | GSL" },
@@ -119,10 +119,11 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <section id="temoignage" className="bg-[#F7F5F5] pt-12 px-4 pb-20 tablet:pt-20 tablet:px-8 tablet:pb-60">
-        <div className="container flex flex-
-        
-        col tablet:flex-row tablet:justify-between">
+      <section id="temoignage" className="bg-[#F7F5F5] pt-12 px-4 
+       tablet:pt-8 tablet:px-8 tablet:pb-32">
+        <h1 className="font-sans font-semibold text-center text-primary text-32 mb-8">Nos partenaires</h1>
+        <div className="tablet:container">
+
           <CarouselPlugin />
         </div>
       </section>
