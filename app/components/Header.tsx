@@ -19,11 +19,11 @@ export function Header() {
           <img src="/icons/logo-mobile.svg" className='tablet:hidden' alt="" />
         </a>
         <nav className="hidden tablet:flex items-center space-x-6">
-          <a href="#home" className="py-4 hover:border-b-3 hover:border-primary">Accueil</a>
-          <a href="#services" className="py-4 hover:border-b-3 hover:border-primary">Services</a>
-          <a href="#logistique" className="py-4 hover:border-b-3 hover:border-primary">Logistique</a>
-          <a href="#temoignage" className="py-4 hover:border-b-3 hover:border-primary">Témoignage</a>
-          <a href="#apropos" className="py-4 hover:border-b-3 hover:border-primary">À propos</a>
+          <a href="#home" className="py-4 border-b-3 border-transparent hover:border-b-3 hover:border-primary">Accueil</a>
+          <a href="#services" className="py-4 hover:border-b-3 border-b-3 border-transparent hover:border-primary">Services</a>
+          <a href="#logistique" className="py-4 hover:border-b-3 border-b-3 border-transparent hover:border-primary">Logistique</a>
+          <a href="#temoignage" className="py-4 hover:border-b-3 border-b-3 border-transparent hover:border-primary">Témoignage</a>
+          <a href="#apropos" className="py-4 hover:border-b-3 border-b-3 border-transparent hover:border-primary">À propos</a>
         </nav>
         <a href="#contact" className="hidden tablet:block py-4 px-5 border border-black font-semibold">
           Contactez-nous

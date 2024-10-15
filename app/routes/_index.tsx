@@ -4,6 +4,7 @@ import Footer from "~/components/Footer";
 import InfoOverlay from "~/components/InfoOverlay";
 import { useState } from "react";
 import CarouselPlugin from "~/components/Carousel";
+import PartnerLogos from "~/components/sponsors";
 export const meta: MetaFunction = () => {
   return [
     { title: "Général Services & Logistique | GSL" },
@@ -34,24 +35,18 @@ export default function Index() {
               Contactez-nous
             </button>
           </div>
-          <img src="/images/photo-3.png" alt="Vehicle" className="order-1 aspect-[416/212] tablet:aspect-[607/310] tablet:order-2 tablet:rounded-lg pl-4 tablet:pl-0" />
+          <div className="order-1 aspect-[416/212] tablet:aspect-[607/310] tablet:order-2 tablet:rounded-lg pl-4 tablet:pl-0"> <img src="/images/photo-3.png" alt="Vehicle" className="order-1 aspect-[416/212] tablet:aspect-[607/310] tablet:order-2 tablet:rounded-lg pl-4 tablet:pl-0" /></div>
+          <div className="hidden aspect-[416/212] tablet:aspect-[607/310]  tablet:block tablet:w-full tablet:h-[327px] tablet:rounded-lg tablet:order-3">
           <img src="/images/photo-1.png" alt="Vehicles" className="hidden aspect-[416/212] tablet:aspect-[607/310]  tablet:block tablet:w-full tablet:h-[327px] tablet:rounded-lg tablet:order-3" />
+          </div>
+          <div className="aspect-[416/212] tablet:aspect-[607/310] order-4 pr-4 tablet:pr-0 w-full h-full">
           <img src="/images/photo-2.png" alt="Vehicles" className="aspect-[416/212] tablet:aspect-[607/310] order-4 pr-4 tablet:pr-0 w-full h-full" />
+          </div>
         </div>
       </section>
 
-      <section id="services" className="container flex flex-col gap-8 py-16 px-8">
-        <div className="mx-auto flex flex-col gap-1">
-          <h1 className="font-sans font-semibold text-center text-primary text-32">Nos partenaires</h1>
-          <p className="text-center text-[#898989]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-        </div>
-        <div className="mx-auto grid grid-collogoss-2 gap-8 tablet:flex tablet:items-center tablet:justify-center tablet:gap-20">
-          <img src="/icons/Frame-1.svg" alt="logos" className="justify-self-center" />
-          <img src="/icons/Frame-2.svg" alt="logos" className="justify-self-center" />
-          <img src="/icons/Frame.svg" alt="logos" className="justify-self-center" />
-          <img src="/icons/logo-43.svg" alt="logos" className="justify-self-center" />
-          <img src="/icons/logo-70.svg" alt="logos" className="col-span-2 justify-self-center" />
-        </div>
+      <section id="services" className="container flex flex-col gap-8 pt-8 px-8">
+        <PartnerLogos />
       </section>
       <section className="container py-16 grid gap-8">
         <div className="grid grid-cols-1 tablet:grid-cols-2 gap-8 items-center">
@@ -70,7 +65,8 @@ export default function Index() {
                 {isExpanded ? "Show Less" : "Learn More"}
               </button>
             </p>
-            <a href="#contact" className="hidden tablet:block py-4 px-5 border border-black font-semibold">
+
+            <a href="#contact" className="py-4 px-5 border border-black font-semibold">
               Contactez-nous
             </a>
           </div>
@@ -94,6 +90,7 @@ export default function Index() {
             <a href="#contact" className=" py-4 px-5 border border-black font-semibold">
               Contactez-nous
             </a>
+
           </div>
         </div>
         <div className="grid grid-cols-1 tablet:grid-cols-2 gap-8 items-center">
@@ -121,7 +118,7 @@ export default function Index() {
       </section>
       <section id="temoignage" className="bg-[#F7F5F5] pt-12 px-4 
        tablet:pt-8 tablet:px-8 tablet:pb-32">
-        <h1 className="font-sans font-semibold text-center text-primary text-32 mb-8">Nos partenaires</h1>
+        <h1 className="font-sans font-semibold text-center text-primary text-32 mb-8">Galerie</h1>
         <div className="tablet:container">
 
           <CarouselPlugin />
