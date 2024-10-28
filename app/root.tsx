@@ -3,9 +3,20 @@ import {
   Meta,
   Outlet,
   Scripts,
+  useLoaderData,
   ScrollRestoration,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
+import type {
+  LinksFunction,
+  LoaderFunctionArgs,
+  MetaFunction,
+} from "@remix-run/node";
+import { json } from "@remix-run/node";
+
+
+import { getEnv } from "./lib/env.server";
+import { getDomainUrl } from "./lib/misc";
+
 
 import "./tailwind.css";
 
@@ -22,7 +33,18 @@ export const links: LinksFunction = () => [
   },
 ];
 
+export const loader = async ({ request }: LoaderFunctionArgs) => {
+  return json({
+    ENV: getEnv(),
+    requestInfo: {
+      origin: getDomainUrl(request),
+    },
+  });
+};
+
 export function Layout({ children }: { children: React.ReactNode }) {
+  const { ENV, requestInfo } = useLoaderData<typeof loader>();
+  const allowIndexing = ENV.ALLOW_INDEXING !== "false";
   return (
     <html lang="en">
       <head>
@@ -38,6 +60,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         {children}
         <ScrollRestoration />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(ENV)}`,
+          }}
+        />
         <Scripts />
       </body>
     </html>

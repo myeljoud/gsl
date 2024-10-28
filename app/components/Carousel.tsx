@@ -1,4 +1,3 @@
-'use client'
 
 import { useState, useEffect } from 'react'
 import { Card, CardContent } from "../components/ui/card"
@@ -6,36 +5,26 @@ import { Carousel, CarouselContent, CarouselItem } from "../components/ui/carous
 import { cn } from "../lib/utils"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
-
+import { Galerie } from '~/types'
 // Sample image data - replace with your actual images
-const images = [
-  { src: "/images/PHOTO-2.png", alt: "Image 1" },
-  { src: "/images/PHOTO-3.png", alt: "Image 2" },
-  { src: "/images/PHOTO-2.png", alt: "Image 3" },
-  { src: "/images/PHOTO-2.png", alt: "Image 4" },
-  { src: "/images/PHOTO-2.png", alt: "Image 4" },
-  { src: "/images/PHOTO-2.png", alt: "Image 4" },
-  { src: "/images/PHOTO-2.png", alt: "Image 4" },
-  { src: "/images/PHOTO-2.png", alt: "Image 4" },
-  { src: "/images/PHOTO.png", alt: "Image 5" },
 
-]
 
-export default function CarouselPlugin() {
+
+export default function CarouselPlugin(props: Galerie) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
-    if (currentIndex >= images.length) {
+    if (currentIndex >= props.images.length) {
       setCurrentIndex(0)
     }
-  }, [currentIndex])
+  }, [currentIndex, props.images])
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % props.images.length)
   }
 
   const handlePrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + props.images.length) % props.images.length)
   }
 
   return (
@@ -45,16 +34,15 @@ export default function CarouselPlugin() {
           <div className="relative">
             <Carousel opts={{ loop: true }} className="w-full">
               <CarouselContent>
-                {images.map((image, index) => (
+                {props.images.map((image, index) => (
                   <CarouselItem key={index}>
                     <div className={cn(
                       "relative aspect-video tablet:aspect-[2/1] transition-opacity duration-500",
-                      index === currentIndex && "block"
                     )}
                     >
                       <img
-                        src={image.src}
-                        alt={image.alt}
+                        src={props.images[currentIndex].asset.url}
+                        alt={props.images[currentIndex].alt}
                         className="object-cover size-full rounded-lg"
                       />
                     </div>
@@ -68,6 +56,7 @@ export default function CarouselPlugin() {
             {/* Controls: Arrow Left, Indicators (Puce), Arrow Right */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-4">
               <button
+
                 onClick={handlePrevious}
                 className="p-1 rounded-full bg-white text-primary-foreground hover:bg-white/75 transition-colors"
                 aria-label="Previous image"
@@ -75,7 +64,7 @@ export default function CarouselPlugin() {
                 <ArrowLeft />
               </button>
               <div className="flex space-x-2">
-                {images.map((_, index) => (
+                {props.images.map((_, index) => (
                   <button
                     key={index}
                     className={cn(
@@ -102,23 +91,23 @@ export default function CarouselPlugin() {
       </Card>
       <div className="w-full  overflow-hidden">
         <div className="mx-auto flex space-x-2 overflow-x-auto py-4 scrollbar-hide" style={{ width: 'calc(5 * (5rem + 0.5rem))' }}>
-        {images.map((image, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={cn(
-              "flex-shrink-0 w-20 h-20 rounded-md cursor-pointer transition-all",
-              index === currentIndex ? "ring-2 ring-primary" : "opacity-70 hover:opacity-100"
-            )}
-          >
-            <img
-              src={image.src}
-              alt={`Preview ${index + 1}`}
-              className="w-full h-full object-cover rounded-md"
-            />
-          </button>
-        ))}
-      </div>
+          {props.images.map((image, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={cn(
+                "flex-shrink-0 w-20 h-20 rounded-md cursor-pointer transition-all",
+                index === currentIndex ? "ring-2 ring-primary" : "opacity-70 hover:opacity-100"
+              )}
+            >
+              <img
+                src={props.images[index].asset.url}
+                alt={`Preview ${index + 1}`}
+                className="w-full h-full object-cover rounded-md"
+              />
+            </button>
+          ))}
+        </div>
       </div>
     </>
   )

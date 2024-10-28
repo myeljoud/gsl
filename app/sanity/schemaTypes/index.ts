@@ -8,7 +8,11 @@ import { seoType } from "./objects/seo-type";
 import { videoType } from "./objects/video-type";
 import { pageType } from "./page-type";
 import { siteMetaType } from "./site-meta-type";
-
+import { landingPage } from "./landingPage";
+import { galerie } from "./galerieType";
+import { partenaireType } from "./partenaireType";
+import { logistiqueType } from "./logistiqueType";
+import { contactType } from "./contactType";
 export default [
   // Documents
   authorType,
@@ -16,6 +20,11 @@ export default [
   pageType,
   activityType,
   siteMetaType,
+  galerie,
+  landingPage,
+  partenaireType,
+  logistiqueType,
+  contactType,
 
   // Objects
   portableTextType,

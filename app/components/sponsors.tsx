@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-
+import { Partenaire } from '~/types';
 export function getMaxLogoWidth(w: number, h: number, area: number) {
   return Math.round(w * Math.sqrt(area / (w * h)));
 }
@@ -7,18 +7,11 @@ export function getMaxLogoWidth(w: number, h: number, area: number) {
 // Adjust this value based on your design requirements
 const TARGET_LOGO_AREA = 10000; // in square pixels
 
-export default function PartnerLogos() {
+export default function PartnerLogos(props: Partenaire) {
   const [logoSizes, setLogoSizes] = useState<{ [key: string]: { width: number; height: number } }>({});
 
-  const partners = useMemo(() => [
-    { name: "Huawei", logo: "/images/partenaire/huawei.png" },
-    { name: "Organisation", logo: "/images/partenaire/organisation.png" },
-    { name: "Expertise France", logo: "/images/partenaire/expertise-france.png" },
-    { name: "Coopération Allemande", logo: "/images/partenaire/cooperation-allemande.jpg" },
-    { name: "USA Army", logo: "/images/partenaire/usa-army.png" },
-    { name: "Sinohydro", logo: "/images/partenaire/sinohydro.png" },
-    { name: "Sinotec", logo: "/images/partenaire/sinotec.jpg" },
-  ], []);
+
+  const partners = useMemo(() => props.images.map((image, index) => ({ name: props.title, logo: image.asset.url })), [props.images, props.title]);
 
   useEffect(() => {
     const loadImages = async () => {

@@ -20,9 +20,6 @@ export const structure: StructureResolver = (S) =>
         .child(S.editor().id("home").schemaType("home").documentId("home")),
       S.documentTypeListItem("page").title("Pages").icon(Files),
       S.divider(),
-      S.documentTypeListItem("activity").title("Activités").icon(Briefcase),
-      S.documentTypeListItem("author").title("Auteurs").icon(Users),
-      S.divider(),
       S.documentTypeListItem("siteMeta").title("Site Meta"),
     ]);
 
