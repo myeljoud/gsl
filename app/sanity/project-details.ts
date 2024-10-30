@@ -1,27 +1,47 @@
-declare global {
-  interface Window {
-    ENV: {
-      VITE_SANITY_STUDIO_PROJECT_ID: string
-      VITE_SANITY_STUDIO_DATASET: string
-      VITE_SANITY_STUDIO_URL: string
-      VITE_SANITY_STUDIO_STEGA_ENABLED: string
-    }
+let projectId: string;
+let dataset: string;
+let apiVersion: string;
+const defaultApiVersion = `2024-02-13`;
+
+
+if (typeof document === "undefined") {
+  if (typeof process !== "undefined") {
+    projectId = process.env.VITE_SANITY_PROJECT_ID;
+    dataset = process.env.VITE_SANITY_DATASET;
+    apiVersion = process.env.VITE_SANITY_API_VERSION ?? defaultApiVersion;
+  } else {
+    projectId = import.meta.env.VITE_SANITY_PROJECT_ID;
+    dataset = import.meta.env.VITE_SANITY_DATASET;
+    apiVersion = import.meta.env.VITE_SANITY_API_VERSION ?? defaultApiVersion;
   }
+} else {
+  projectId = window.ENV.VITE_SANITY_PROJECT_ID;
+  dataset = window.ENV.VITE_SANITY_DATASET;
+  apiVersion = window.ENV.VITE_SANITY_API_VERSION ?? defaultApiVersion;
 }
 
-const {
-  VITE_SANITY_STUDIO_PROJECT_ID,
-  VITE_SANITY_STUDIO_DATASET,
-  VITE_SANITY_STUDIO_URL = 'http://localhost:3333',
-  VITE_SANITY_STUDIO_STEGA_ENABLED = false
-} = typeof document === 'undefined' ? process.env : window.ENV
 
-export const projectId = VITE_SANITY_STUDIO_PROJECT_ID!
-export const dataset = VITE_SANITY_STUDIO_DATASET!
-export const studioUrl = VITE_SANITY_STUDIO_URL!
-export const stegaEnabled = VITE_SANITY_STUDIO_STEGA_ENABLED === 'true'
+export { apiVersion, dataset, projectId };
 
-if (!projectId) throw new Error('Missing SANITY_STUDIO_PROJECT_ID in .env')
-if (!dataset) throw new Error('Missing SANITY_STUDIO_DATASET in .env')
-if (!studioUrl) throw new Error('Missing SANITY_STUDIO_URL in .env')
-if (!stegaEnabled) throw new Error(`Missing SANITY_STUDIO_STEGA_ENABLED in .env`)
+export const projectDetails = () => ({
+  projectId,
+  dataset,
+  apiVersion,
+});
+
+// If any of these values are missing, throw errors as the app requires them
+if (!projectId) {
+  throw new Error(
+    `Missing VITE_SANITY_PROJECT_ID in .env, run npx sanity@latest init --env`,
+  );
+}
+if (!dataset) {
+  throw new Error(
+    `Missing VITE_SANITY_DATASET in .env, run npx sanity@latest init --env`,
+  );
+}
+if (!apiVersion) {
+  throw new Error(
+    `Missing VITE_SANITY_API_VERSION in .env, run npx sanity@latest init --env`,
+  );
+}

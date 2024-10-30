@@ -1,6 +1,6 @@
 import { Card, Code, Flex } from "@sanity/ui";
 
-import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/constants";
+import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "../../constans";
 import { TODO } from "~/types";
 
 export function OGPreview({ options }: TODO) {

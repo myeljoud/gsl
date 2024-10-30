@@ -17,6 +17,32 @@ export const homeType = defineType({
       description: "Displayed in header, footer and in meta tags",
       type: "string",
     }),
+    defineField({
+      name:"heroSection",
+      title: "Hero Section",
+      type: "heroSection", 
+    }),
+    defineField({
+      name:"partenaire",
+      title: "Partenaire",
+      type: "partenaire",
+    }),
+    defineField({
+      name:"galerie",
+      title: "Galerie",
+      type: "galerie",
+    }),
+    defineField({
+      name:"logistique",
+      title: "Logistique",
+      type: "logistique",
+    }),
+    defineField({
+      name: 'contact',
+      title: 'Contact Section',
+      type: 'contact',
+    }),
+
   ],
   preview: {
     select: {
