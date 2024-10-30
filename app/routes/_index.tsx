@@ -39,13 +39,13 @@ export default function Index() {
     <main className="">
       <Header />
       <section id="home" className="mx-auto w-full max-w-screen-laptop tablet:px-4 py-8 tablet:py-16  relative overflow-hidden tablet:overflow-visible ">
-        <img src="/icons/Vector.svg" alt="" className="hidden tablet:block absolute top-5 left-20  z-10" />
+        <img src="/icons/Vector.svg" alt="" className="hidden tablet:block absolute top-5 left-20 z-10" />
         <img src="/icons/Vector.svg" className="absolute aspect-[576/635] top-56 -right-20 tablet:hidden" alt="" />
 
         <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4 relative z-20">
           <div className="order-2 tablet:order-1 flex flex-col items-start gap-4 py-2 px-4 ">
-            <h1 className="font-robotoCondensed text-38 leading-38 tablet:text-6xl font-extrabold text-center tablet:text-start ">{heroSection.header}</h1>
-            <p className="text-[#898989] text-lg font-medium text-center tablet:text-start">{heroSection.paragraph}</p>
+            <h1 className="font-robotoCondensed text-38 leading-38 tablet:text-6xl font-extrabold text-center tablet:text-start">{heroSection.header}</h1>
+            <p className="text-[#898989] text-base text-center tablet:text-start">{heroSection.paragraph}</p>
             <button className="text-white mx-auto tablet:mx-0 bg-primary px-5 py-4">
               {heroSection.ctaLabel}
             </button>
