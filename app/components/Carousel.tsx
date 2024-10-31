@@ -89,14 +89,14 @@ export default function CarouselPlugin(props: Galerie) {
 
         </CardContent>
       </Card>
-      <div className="w-full  overflow-hidden">
-        <div className="mx-auto flex space-x-2 overflow-x-auto py-4 scrollbar-hide" style={{ width: 'calc(5 * (5rem + 0.5rem))' }}>
+      <div className="w-full overflow-hidden">
+        <div className="mx-auto flex space-x-2 overflow-x-auto py-4 no-scrollbar" style={{ width: 'calc(5 * (5rem + 0.5rem))' }}>
           {props.images.map((image, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={cn(
-                "flex-shrink-0 w-20 h-20 rounded-md cursor-pointer transition-all",
+                "flex-shrink-0 size-16 tablet:size-20 rounded-md cursor-pointer transition-all",
                 index === currentIndex ? "ring-2 ring-primary" : "opacity-70 hover:opacity-100"
               )}
             >

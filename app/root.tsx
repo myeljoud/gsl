@@ -9,9 +9,9 @@ import {
 import type {
   LinksFunction,
   LoaderFunctionArgs,
-  MetaFunction,
 } from "@remix-run/node";
 import { json } from "@remix-run/node";
+import { CanonicalLink } from "./components/canonical-link";
 
 
 import { getEnv } from "./lib/env.server";
@@ -44,6 +44,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { ENV, requestInfo } = useLoaderData<typeof loader>();
+
+
   const allowIndexing = ENV.ALLOW_INDEXING !== "false";
   return (
     <html lang="en">
@@ -56,6 +58,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+        <CanonicalLink origin={requestInfo.origin} />
+        {allowIndexing ? null : (
+          <meta name="robots" content="noindex, nofollow" />
+        )}
+
       </head>
       <body>
         {children}

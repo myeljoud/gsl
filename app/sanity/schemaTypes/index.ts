@@ -11,7 +11,7 @@ import { siteMetaType } from "./site-meta-type";
 import { landingPage } from "./landingPage";
 import { galerie } from "./galerieType";
 import { partenaireType } from "./partenaireType";
-import { logistiqueType } from "./logistiqueType";
+import { servicesType } from "./servicesType";
 import { contactType } from "./contactType";
 export default [
   // Documents
@@ -23,7 +23,7 @@ export default [
   galerie,
   landingPage,
   partenaireType,
-  logistiqueType,
+  servicesType,
   contactType,
 
   // Objects

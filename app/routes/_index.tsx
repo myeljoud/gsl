@@ -22,7 +22,6 @@ export const meta: MetaFunction = () => {
 export const loader = async () => {
   try {
     const pageData = await sanityClient.fetch<PageData>(homeQuery);
-
     return json(pageData);
   } catch (error) {
     console.error('Error fetching homepage data:', error);
@@ -33,7 +32,7 @@ export const loader = async () => {
 export default function Index() {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const { heroSection, contact, logistique, galerie, partenaire } = useLoaderData<PageData>();
+  const { heroSection, contact, services, galerie, partenaire } = useLoaderData<PageData>();
 
   return (
     <main className="">
@@ -63,22 +62,32 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="services" className="container flex flex-col gap-8 pt-8 px-8">
+      <section id="partenaires" className="container flex flex-col gap-8 pt-8 px-8">
         <PartnerLogos {...partenaire} />
       </section>
-      <section className="container py-16 grid gap-8">
-        {logistique.items.map((item, i) => {
+      <section id="services" className="container py-16 grid gap-8">
+        <div className="mx-auto max-w-2xl">
+          <h2 className="font-sans font-semibold text-center text-primary text-3xl sm:text-4xl">
+            {services.title}
+          </h2>
+          {services.description && <p className="text-center text-[#898989]">
+            {services.description}
+          </p>
+          }
+        </div>
+        {services.items.map((item, i) => {
           const isEven = i % 2 === 1;
+
           return (
             <div key={i} className="grid grid-cols-1 tablet:grid-cols-2 gap-8 items-center">
               <img src={item.img.asset.url} className={`w-full rounded-lg ${isEven ? 'tablet:order-2' : ''}`}
                 alt="" />
               <div className="flex flex-col items-center tablet:items-start gap-4">
                 <h1 className="font-robotoCondensed text-38 leading-38 font-bold text-center tablet:text-left ">{item.header}</h1>
-                <p className="font-roboto text-center text-lg text-[#6D6D6D] tablet:text-left hidden tablet:block">
+                <p className="font-roboto text-center text-lg text-[#6D6D6D] tablet:text-left  tablet:block">
                   {item.paragraph}
                 </p>
-                <p className="font-roboto text-center text-lg text-[#6D6D6D] tablet:text-left tablet:hidden">
+                {/* <p className="font-roboto text-center text-lg text-[#6D6D6D] tablet:text-left tablet:hidden">
                   {isExpanded ? item.paragraph : item.paragraph.slice(0, 146) + "..."}
                   <button
                     onClick={() => setIsExpanded(!isExpanded)}
@@ -86,23 +95,22 @@ export default function Index() {
                   >
                     {isExpanded ? "Show Less" : "Learn More"}
                   </button>
-                </p>
-
+                </p> */}
                 <a href="#contact" className="py-4 px-5 border border-black font-semibold">
-                  Contactez-nous
+                  {item.ctaLabel}
                 </a>
               </div>
             </div>
           )
         })}
-
-
       </section>
-      <section id="temoignage" className="bg-[#F7F5F5]  pt-6 tablet:pt-12 px-4 
+      <section id="galeries" className="bg-[#F7F5F5] pb-48  pt-6 tablet:pt-12 px-4 
         tablet:px-8 tablet:pb-32">
-        <h1 className="font-sans font-semibold text-center text-primary text-32 mb-8">{galerie.title}</h1>
+        <div className="mb-8">
+          <h1 className="font-sans font-semibold text-center text-primary text-32 ">{galerie.title}</h1>
+          {galerie.description && <p className="text-center text-[#898989]">{galerie.description}</p>}
+        </div>
         <div className="tablet:container">
-
           <CarouselPlugin  {...galerie} />
         </div>
       </section>

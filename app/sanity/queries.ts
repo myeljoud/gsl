@@ -29,7 +29,7 @@ export const homeQuery = `*[_type == "home"][0] {
       alt
     }
   },
-  "logistique": logistique {
+  "services": services {
     title,
     description,
     items[] {
@@ -40,7 +40,8 @@ export const homeQuery = `*[_type == "home"][0] {
         }
       },
       header,
-      paragraph
+      paragraph,
+      ctaLabel
     }
   },
   "partenaire": partenaire {

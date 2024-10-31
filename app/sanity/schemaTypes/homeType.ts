@@ -18,31 +18,30 @@ export const homeType = defineType({
       type: "string",
     }),
     defineField({
-      name:"heroSection",
+      name: "heroSection",
       title: "Hero Section",
-      type: "heroSection", 
+      type: "heroSection",
     }),
     defineField({
-      name:"partenaire",
+      name: "partenaire",
       title: "Partenaire",
       type: "partenaire",
     }),
     defineField({
-      name:"galerie",
+      name: "services",
+      title: "Services",
+      type: "services",
+    }),
+    defineField({
+      name: "galerie",
       title: "Galerie",
       type: "galerie",
     }),
     defineField({
-      name:"logistique",
-      title: "Logistique",
-      type: "logistique",
+      name: "contact",
+      title: "Contact Section",
+      type: "contact",
     }),
-    defineField({
-      name: 'contact',
-      title: 'Contact Section',
-      type: 'contact',
-    }),
-
   ],
   preview: {
     select: {
