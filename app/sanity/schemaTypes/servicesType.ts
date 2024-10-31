@@ -1,8 +1,8 @@
 import { defineField, defineType } from "sanity";
 
-export const logistiqueType = defineType({
-  name: "logistique",
-  title: "Logistique",
+export const servicesType = defineType({
+  name: "services",
+  title: "Services",
   type: "object",
   fields: [
     defineField({
@@ -27,7 +27,6 @@ export const logistiqueType = defineType({
               name: "img",
               title: "Image",
               type: "image",
-              
             }),
             defineField({
               name: "header",
@@ -39,10 +38,16 @@ export const logistiqueType = defineType({
               title: "Paragraph",
               type: "text",
             }),
+            defineField({
+              name: "ctaLabel",
+              title: "CTA Label",
+              type: "string",
+            }),
           ],
         },
       ],
-      validation: (rule) => rule.required().min(1).warning("At least one item is required."),
+      validation: rule =>
+        rule.required().min(1).warning("At least one item is required."),
     }),
   ],
 });

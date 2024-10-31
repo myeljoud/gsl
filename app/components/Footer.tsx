@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer id="apropos" className="bg-[#00034A] text-white py-16 px-4 tablet:py-60 tablet:px-8 tablet:pb-20">
+    <footer id="apropos" className="bg-[#00034A] text-white pt-52 pb-16 px-4 tablet:py-60 tablet:px-8 tablet:pb-20">
       <div className="container mx-auto">
         <div className="flex flex-col tablet:flex-row justify-between items-center tablet:items-start mb-12 space-y-8 tablet:space-y-0">
           <div className="text-center tablet:text-left">
@@ -21,15 +21,14 @@ function Footer() {
               <h3 className="font-bold mb-4">Explore</h3>
               <ul className="space-y-2 font-extralight">
                 <li>Accueil</li>
-                <li>Services</li>
-                <li>Logistiques</li>
+                <li>Partenaires</li>
               </ul>
             </div>
             <div className="text-center tablet:text-left">
               <h3 className="font-bold mb-4">Ressources</h3>
               <ul className="space-y-2 font-extralight">
-                <li>À propos</li>
-                <li>Témoignages</li>
+                <li>Services</li>
+                <li>Galeries</li>
                 <li>Contactez-nous</li>
               </ul>
             </div>

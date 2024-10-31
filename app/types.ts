@@ -27,16 +27,17 @@ export type Galerie = {
   images: Array<SanityImage & { alt: string }>;
 };
 
-type LogistiqueItem = {
+type ServiceItem = {
   img: SanityImage;
   header: string;
   paragraph: string;
+  ctaLabel: string;
 };
 
-type Logistique = {
+type Services = {
   title: string;
   description: string;
-  items: LogistiqueItem[];
+  items: ServiceItem[];
 };
 
 export type Partenaire = {
@@ -49,6 +50,6 @@ export type PageData = {
   heroSection: HeroSection;
   contact: Contact;
   galerie: Galerie;
-  logistique: Logistique;
+  services: Services;
   partenaire: Partenaire;
 };

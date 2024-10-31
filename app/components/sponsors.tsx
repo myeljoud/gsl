@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Partenaire } from '~/types';
+import { clsx } from 'clsx';
 export function getMaxLogoWidth(w: number, h: number, area: number) {
   return Math.round(w * Math.sqrt(area / (w * h)));
 }
@@ -41,23 +42,23 @@ export default function PartnerLogos(props: Partenaire) {
   return (
     <section className="container mx-auto px-4">
       <div className="mx-auto max-w-2xl">
-        <h2 className="font-sans font-semibold text-center text-primary text-3xl sm:text-4xl mb-4">
-          Nos partenaires
+        <h2 className="font-sans font-semibold text-center text-primary text-3xl sm:text-4xl mb-2">
+          {props.title}
         </h2>
-        <p className="text-center text-[#898989]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam.
+        {props.description && <p className="text-center text-[#898989] mb-4">
+          {props.description}
         </p>
+        }
       </div>
-      <div className="grid grid-cols-2 gap-8 tablet:grid-cols-5 pt-8">
+      <div className="flex flex-wrap justify-center gap-x-8 tablet:ap-x-4 gap-y-6 mt-6">
         {partners.map((partner) => (
           <div
-            key={partner.name}
-            className="flex items-center justify-center p-4 rounded-lg"
+            key={partner.name + partner.logo}
+            className="flex-[0_0_calc(50%-16px)] tablet:flex-[0_0_calc(20%-16px)]"
           >
             {logoSizes[partner.name] && (
               <img
-                // className={`max-w-[${logoSizes[partner.name].width}]`}
+                className="mx-auto"
                 src={partner.logo}
                 alt={`${partner.name} logo`}
                 style={{
