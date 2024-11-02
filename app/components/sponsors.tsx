@@ -1,6 +1,6 @@
-import { useState, useEffect, useMemo } from 'react';
-import { Partenaire } from '~/types';
-import { clsx } from 'clsx';
+import { useEffect, useMemo, useState } from "react";
+import { Partenaire } from "~/types";
+
 export function getMaxLogoWidth(w: number, h: number, area: number) {
   return Math.round(w * Math.sqrt(area / (w * h)));
 }
@@ -9,10 +9,15 @@ export function getMaxLogoWidth(w: number, h: number, area: number) {
 const TARGET_LOGO_AREA = 10000; // in square pixels
 
 export default function PartnerLogos(props: Partenaire) {
-  const [logoSizes, setLogoSizes] = useState<{ [key: string]: { width: number; height: number } }>({});
+  const [logoSizes, setLogoSizes] = useState<{
+    [key: string]: { width: number; height: number };
+  }>({});
 
-
-  const partners = useMemo(() => props.images.map((image, index) => ({ name: props.title, logo: image.asset.url })), [props.images, props.title]);
+  const partners = useMemo(
+    () =>
+      props.images.map(image => ({ name: props.title, logo: image.asset.url })),
+    [props.images, props.title]
+  );
 
   useEffect(() => {
     const loadImages = async () => {
@@ -20,16 +25,23 @@ export default function PartnerLogos(props: Partenaire) {
       for (const partner of partners) {
         const img = new Image();
         img.src = partner.logo;
-        await new Promise((resolve) => {
+
+        await new Promise(resolve => {
           img.onload = () => {
             const originalWidth = img.naturalWidth;
             const originalHeight = img.naturalHeight;
-            const maxWidth = getMaxLogoWidth(originalWidth, originalHeight, TARGET_LOGO_AREA);
+            const maxWidth = getMaxLogoWidth(
+              originalWidth,
+              originalHeight,
+              TARGET_LOGO_AREA
+            );
+
             sizes[partner.name] = {
               width: maxWidth,
-              height: Math.round((maxWidth / originalWidth) * originalHeight)
+              height: Math.round((maxWidth / originalWidth) * originalHeight),
             };
-            resolve();
+
+            resolve(null);
           };
         });
       }
@@ -45,17 +57,17 @@ export default function PartnerLogos(props: Partenaire) {
         <h2 className="font-sans font-semibold text-center text-primary text-3xl sm:text-4xl mb-2">
           {props.title}
         </h2>
-        {props.description && <p className="text-center text-[#898989] mb-4">
-          {props.description}
-        </p>
-        }
+
+        {props.description && (
+          <p className="text-center text-[#898989] mb-4">{props.description}</p>
+        )}
       </div>
-      <div className="flex flex-wrap justify-center gap-x-8 tablet:ap-x-4 gap-y-6 mt-6">
-        {partners.map((partner) => (
+
+      <div className="flex flex-wrap justify-center gap-x-8 gap-y-6 mt-8">
+        {partners.map(partner => (
           <div
             key={partner.name + partner.logo}
-            className="flex-[0_0_calc(50%-16px)] tablet:flex-[0_0_calc(20%-16px)]"
-          >
+            className="flex-[0_0_calc(50%-16px)] tablet:flex-[0_0_calc(20%-16px)]">
             {logoSizes[partner.name] && (
               <img
                 className="mx-auto"
@@ -64,8 +76,8 @@ export default function PartnerLogos(props: Partenaire) {
                 style={{
                   width: `${logoSizes[partner.name].width}px`,
                   height: `${logoSizes[partner.name].height}px`,
-                  maxWidth: '100%',
-                  objectFit: 'contain'
+                  maxWidth: "100%",
+                  objectFit: "contain",
                 }}
               />
             )}
