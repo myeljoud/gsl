@@ -43,7 +43,7 @@ export function Header() {
           </a>
         </nav>
 
-        <Button asChild variant="secondary">
+        <Button asChild variant="secondary" className="hidden tablet:block">
           <a href="#contact">Contactez-nous</a>
         </Button>
 
