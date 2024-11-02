@@ -22,7 +22,7 @@ export const contactType = defineType({
     }),
     defineField({
       name: "phoneNumber",
-      title: "Phone Number",
+      title: "Numéro de téléphone (pas d'espaces)",
       type: "string",
     }),
   ],
