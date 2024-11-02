@@ -6,8 +6,8 @@ export default function InfoOverlay(props: Contact) {
         <h2 className="text-2xl tablet:text-3xl font-bold text-center mb-4">{props.header}</h2>
         <p className="text-center mb-8">{props.paragraph}</p>
         <div className="flex flex-col tablet:flex-row gap-4">
-          <a href="tel:" className="bg-primary text-white py-3 px-4 flex-1 text-sm text-center tablet:text-base">{props.phoneNumber}</a>
-          <a href="mailto:+22233333333" className="bg-primary text-white py-3 px-4 flex-1 text-sm text-center tablet:text-base">{props.email}</a>
+          <a href="tel:+22236323235" className="bg-primary text-white py-3 px-4 flex-1 text-sm text-center tablet:text-base">{props.phoneNumber}</a>
+          <a href="mailto:gsl_mr@yahoo.fr" className="bg-primary text-white py-3 px-4 flex-1 text-sm text-center tablet:text-base">{props.email}</a>
         </div>
       </div>
     </section>
