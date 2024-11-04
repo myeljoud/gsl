@@ -187,3 +187,64 @@ html {
       scrollbar-width: none;  /* Firefox */
 }
 }
+
+.carousel {
+  @apply relative h-full w-full bg-gray-100;
+}
+
+.carousel--container {
+  @apply relative h-full w-full overflow-hidden;
+}
+
+.carousel--slides {
+  @apply relative flex h-full w-full touch-pan-y select-none will-change-transform;
+}
+
+.carousel--slides .has-drag {
+  @apply cursor-grab active:cursor-grabbing;
+}
+
+.carousel--slide {
+  @apply relative min-h-full w-full flex-shrink-0 flex-grow-0 overflow-hidden;
+}
+
+.carousel--hud {
+  @apply pointer-events-none absolute inset-x-0 bottom-2 flex justify-center tablet:bottom-6;
+}
+
+.carousel--nav {
+  @apply pointer-events-auto relative flex flex-row items-center rounded-full border bg-white/80 p-0.5 tablet:px-1.5 tablet:py-1;
+}
+
+.carousel--prev,
+.carousel--next {
+  @apply h-6 w-6 cursor-pointer appearance-none rounded-full bg-transparent p-1 no-underline transition-colors duration-300 hover:bg-gray-300 tablet:h-7 tablet:w-7;
+}
+
+.carousel--status {
+  @apply relative flex items-center justify-center p-1 tablet:p-1.5;
+}
+
+.carousel--dots {
+  @apply relative flex items-center;
+}
+
+.carousel--dots button {
+  @apply cursor-pointer appearance-none bg-transparent p-1 no-underline tablet:p-1.5;
+}
+
+.carousel--dots button::before {
+  @apply relative block size-1.5 tablet:size-2 rounded-full bg-black opacity-30 tablet:h-2.5 tablet:w-2.5;
+  transition: opacity 0.1s linear, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  content: "";
+}
+
+.carousel--dots button:hover::before {
+  @apply opacity-100;
+}
+
+.carousel--dots button.is-active {}
+
+.carousel--dots button.is-active::before {
+  @apply scale-150 opacity-100;
+}
